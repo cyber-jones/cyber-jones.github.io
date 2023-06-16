@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.ghost {
+  cursor: pointer;
+  position: relative;
+  width: 160px;
+  height: 180px;
+  background-color: white;
+  border-radius: 70px 70px 0 0;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  20% {transform: translateY(200px);}
+  40% {transform: translateX(300px);}
+  60% {transform: translateX(-300px);}
+  80% {transform: translateY(-200px);}
+  100% {transform-origin: center;}
+}
+
+.ghost .face {
+  width: 120px;
+  position: absolute;
+  top: 60px ;
+  left: calc(50% - 60px);
+  background-color: blue;
+
+}
+
+
+.ghost .face .eyes {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 18px;
+}
+
+.ghost .face .eyes span {
+  width: 24px;
+  height: 12px;
+  background: black;
+  border-radius: 8px 8px 26px  26px;
+  transition: .4s;
+}
+
+.ghost:hover .face .eyes span {
+  height: 24px;
+  border-radius: 50%;
+}
+
+.ghost .face .mouth {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ghost .face .mouth span {
+  height: 9px;
+  width: 40px;
+  background: black;
+  border-radius: 0 0 20px 20px;
+  transition: .4s;
+}
+
+.ghost:hover .face .mouth span {
+  height: 18px;
+}
+
+.ghost .hands {
+  width: 220px;
+  position: absolute;
+  left: -30px;
+  top: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ghost .hands span {
+  width: 30px;
+  height: 30px;
+  background: white;
+  transform: translateY(-5px);
+  animation: shake 4s linear infinite;
+}
+
+@keyframes shake {
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.ghost .hands span:first-child {
+  border-radius: 12px 0 0 20px;
+}
+
+.ghost .hands span:last-child {
+  border-radius: 0 12px 20px 0;
+  animation-delay: 2s;
+}
+
+.ghost .feet {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: -21px;
+}
+
+.ghost .feet span {
+  flex: 1;
+  height: 22px;
+  background: white;
+  border-radius: 0 0 20px 20px;
+}
+
+.ghost .foot span:first-child {
+  border-radius: 0 0 12px 20px;
+}
+
+.ghost .foot span:first-child {
+  border-radius: 0 0 20px 12px;
+}
